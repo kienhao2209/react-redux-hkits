@@ -6,6 +6,7 @@ import NewsRelated from './../NewsRelated/NewsRelated';
 const Detail = () => {
     // Lấy tham số URL nếu cần, ví dụ slug và id
     const { slug, id } = useParams();
+    let count = 1;
 
     return (
         <>
@@ -54,16 +55,18 @@ const Detail = () => {
                 <div className="row mb-5">
                     {
                         dl.map((value, key) => {
-                            console.log(key);
-                            if (key <= 3) {
-                                return (
-                                    <NewsRelated key={key}
-                                        id={value.id}
-                                        title={value.tieuDe}
-                                        quote={value.trichDan}
-                                        description={value.noiDung}
-                                        image={value.anh} />
-                                )
+                            if (value.id != id) {
+                                count++;
+                                if (count <= 5) {
+                                    return (
+                                        <NewsRelated key={key}
+                                            id={value.id}
+                                            title={value.tieuDe}
+                                            quote={value.trichDan}
+                                            description={value.noiDung}
+                                            image={value.anh} />
+                                    )
+                                }
                             }
                         })
                     }
