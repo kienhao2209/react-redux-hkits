@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-class NewsItem extends Component {
-    constructor(props) {
-        super(props);
-
-    }
+class NewsRelated extends Component {
 
     chuyenDoiURL = (str) => {
         // Chuyển hết sang chữ thường
@@ -35,16 +31,13 @@ class NewsItem extends Component {
         // return
         return str;
     }
-
-    // {`/tin-tuc/ ${this.chuyenDoiURL(this.props.title)} - ${this.props.tinId} .html`}
     render() {
         return (
-            <div className="col-md-4 d-flex justify-content-center">
+            <div className="col-md-3">
                 <div className="card" style={{ width: "18rem" }}>
                     <Link to={"/tin-tuc/" + this.chuyenDoiURL(this.props.title) + "/" + this.props.id + ".html"}>
-                        <img src={this.props.image} className="card-img-top" />
+                        <img src={this.props.image} className="card-img-top" alt="Related news 1"/>
                     </Link>
-
                     <div className="card-body">
                         <h5 className="card-title">{this.props.title}</h5>
                         <p className="card-text">{this.props.description}</p>
@@ -55,4 +48,4 @@ class NewsItem extends Component {
     }
 }
 
-export default NewsItem;
+export default NewsRelated;
