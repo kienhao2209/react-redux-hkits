@@ -8,16 +8,30 @@ class Contact extends Component {
             isNavigate: false
         }
     }
-
+    isChange = (event) => {
+        const ten = event.target.name;
+        const giatri = event.target.value;
+        this.setState({
+            [ten]: giatri
+        });
+    }
     submitForm = (event) => {
         event.preventDefault();
         this.setState({
             isNavigate: true
         });
     }
-
+    getGiaTri = () => {
+        let noiDung = "";
+        noiDung += "Tên: " + this.state.fName;
+        noiDung += " - Email: " + this.state.fEmail;
+        noiDung += " - Phone: " + this.state.fPhone;
+        noiDung += " - Message: " + this.state.fMess;
+        return noiDung;
+    }
     render() {
         if (this.state.isNavigate) {
+            console.log(this.getGiaTri());
             return <Navigate to="/home" />
         }
         return (
@@ -48,27 +62,27 @@ class Contact extends Component {
                                     <div className="control-group">
                                         <div className="form-group floating-label-form-group controls mb-0 pb-2">
                                             <label>Name</label>
-                                            <input type="text" id="name" className="form-control" placeholder="Name" required=""/>
+                                            <input onChange={(event) => this.isChange(event)} name="fName" type="text" id="name" className="form-control" placeholder="Name" required="required" aria-invalid="false"/>
                                             <p className="help-block text-danger" />
                                         </div>
                                     </div>
                                     <div className="control-group">
                                         <div className="form-group floating-label-form-group controls mb-0 pb-2">
                                             <label>Email Address</label>
-                                            <input type="email" id="email" className="form-control" placeholder="Email Adress" required=""/>
+                                            <input onChange={(event) => this.isChange(event)} name="fEmail" type="email" id="email" className="form-control" placeholder="Email Adress" required="required" aria-invalid="false"/>
                                             <p className="help-block text-danger" />
                                         </div>
                                     </div>
                                     <div className="control-group" />
                                     <div className="form-group floating-label-form-group controls mb-0 pb-2">
                                         <label>Phone Number</label>
-                                        <input type="tel" id="phone" className="form-control" placeholder="Phone Number" required="" />
+                                        <input onChange={(event) => this.isChange(event)} name="fPhone" type="tel" id="phone" className="form-control" placeholder="Phone Number" required="" />
                                         <p className="help-block text-danger" />
                                     </div>
                                     <div className="control-group" />
                                     <div className="form-group floating-label-form-group controls mb-0 pb-2">
                                         <label>Message</label>
-                                        <textarea className="form-control" id="message" rows="{5}" placeholder="message" required="" defaultValue={""} />
+                                        <textarea onChange={(event) => this.isChange(event)} name="fMess" className="form-control" id="message" rows="{5}" placeholder="message" required="" defaultValue={""} />
                                         <p className="help-block text-danger" />
                                     </div>
                                     <br />
