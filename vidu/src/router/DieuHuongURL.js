@@ -9,6 +9,7 @@ class DieuHuongURL extends Component {
     render() {
         return (
             <Routes>
+                <Route path="/" element={<Home />} />
                 <Route path="/home" element={<Home />} />
                 <Route path="/tin" element={<News />} />
                 <Route path="/tin-tuc/:slug/:id.html" element={<Detail />} />

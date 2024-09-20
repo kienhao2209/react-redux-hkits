@@ -19,9 +19,6 @@ class Navigation extends Component {
                                 <NavLink to="/tin">Tin tức</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/tin-chi-tiet">Tin chi tiết</NavLink>
-                            </li>
-                            <li>
                                 <NavLink to="/lien-he">Liên hệ</NavLink>
                             </li>
                         </ul>

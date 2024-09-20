@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import dl from './../dulieu.json';
 import NewsRelated from './../NewsRelated/NewsRelated';
 
@@ -28,8 +28,8 @@ const Detail = () => {
             <div className="container">
                 {/* Phần xuất dữ liệu ra giao diện dựa trên tham số truyền vào từ URL nè  */}
                 {
-                    dl.map((value, key) => {
-                        if (value.id == id) {
+                    dl.map((value, key) => {               
+                        if (value.id === parseInt(id,20)) {
                             return (
                                 <div className="row" key={key}>
                                     <div className="col-md-12">
@@ -42,6 +42,8 @@ const Detail = () => {
                                     </div>
                                 </div>
                             )
+                        } else {
+                            return null;
                         }
                     })
                 }
@@ -55,7 +57,7 @@ const Detail = () => {
                 <div className="row mb-5">
                     {
                         dl.map((value, key) => {
-                            if (value.id != id) {
+                            if (value.id !== parseInt(id,20)) {
                                 count++;
                                 if (count <= 5) {
                                     return (
@@ -66,7 +68,11 @@ const Detail = () => {
                                             description={value.noiDung}
                                             image={value.anh} />
                                     )
+                                } else {
+                                    return null;
                                 }
+                            } else {
+                                return null;
                             }
                         })
                     }
