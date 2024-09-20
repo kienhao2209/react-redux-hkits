@@ -5,7 +5,8 @@ class Contact extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isNavigate: false
+            isNavigate: false,
+            fNgay: "thu7"
         }
     }
     isChange = (event) => {
@@ -27,6 +28,7 @@ class Contact extends Component {
         noiDung += " - Email: " + this.state.fEmail;
         noiDung += " - Phone: " + this.state.fPhone;
         noiDung += " - Message: " + this.state.fMess;
+        noiDung += " - Ngay: " + this.state.fNgay;
         return noiDung;
     }
     render() {
@@ -62,14 +64,14 @@ class Contact extends Component {
                                     <div className="control-group">
                                         <div className="form-group floating-label-form-group controls mb-0 pb-2">
                                             <label>Name</label>
-                                            <input onChange={(event) => this.isChange(event)} name="fName" type="text" id="name" className="form-control" placeholder="Name" required="required" aria-invalid="false"/>
+                                            <input onChange={(event) => this.isChange(event)} name="fName" type="text" id="name" className="form-control" placeholder="Name" required="required" aria-invalid="false" />
                                             <p className="help-block text-danger" />
                                         </div>
                                     </div>
                                     <div className="control-group">
                                         <div className="form-group floating-label-form-group controls mb-0 pb-2">
                                             <label>Email Address</label>
-                                            <input onChange={(event) => this.isChange(event)} name="fEmail" type="email" id="email" className="form-control" placeholder="Email Adress" required="required" aria-invalid="false"/>
+                                            <input onChange={(event) => this.isChange(event)} name="fEmail" type="email" id="email" className="form-control" placeholder="Email Adress" required="required" aria-invalid="false" />
                                             <p className="help-block text-danger" />
                                         </div>
                                     </div>
@@ -79,13 +81,30 @@ class Contact extends Component {
                                         <input onChange={(event) => this.isChange(event)} name="fPhone" type="tel" id="phone" className="form-control" placeholder="Phone Number" required="" />
                                         <p className="help-block text-danger" />
                                     </div>
-                                    <div className="control-group" />
-                                    <div className="form-group floating-label-form-group controls mb-0 pb-2">
-                                        <label>Message</label>
-                                        <textarea onChange={(event) => this.isChange(event)} name="fMess" className="form-control" id="message" rows="{5}" placeholder="message" required="" defaultValue={""} />
-                                        <p className="help-block text-danger" />
+                                    <div className="control-group">
+                                        <div className="form-group floating-label-form-group controls mb-0 pb-2">
+                                            <label>Message</label>
+                                            <textarea onChange={(event) => this.isChange(event)} name="fMess" className="form-control" id="message" rows="{5}" placeholder="message" required="" defaultValue={""} />
+                                            <p className="help-block text-danger" />
+                                        </div>
                                     </div>
                                     <br />
+
+                                    <div className="control-group">
+                                        <div className="form-group floating-label-form-group controls mb-0 pb-2">
+                                            <label>Chọn ngày</label>
+                                            <select className="form-control" value={this.state.fNgay} onChange={(event) => this.isChange(event)} name="fNgay" id="">
+                                                <option value="thu3">Ngày Thứ 3</option>
+                                                <option value="thu5">Ngày Thứ 5</option>
+                                                <option value="thu7">Ngày Thứ 7</option>
+                                                <option value="chunhat">Ngày Chủ Nhật</option>
+                                            </select>
+                                            <p className="help-block text-danger"></p>
+                                        </div>
+                                    </div>
+                                    <br />
+
+                                    <div id="success" />
                                     <div className="form-group">
                                         <button type="submit" onClick={(event) => this.submitForm(event)} className="btn btn-primary" id="sendMessageButton">Send</button>
                                     </div>
