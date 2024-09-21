@@ -15,6 +15,12 @@ class Contact extends Component {
         this.setState({
             [ten]: giatri
         });
+    } 
+    isFileChange = (event) => {
+        const tenanh = event.target.files[0].name;
+        this.setState({
+            fAnh: tenanh
+        });
     }
     submitForm = (event) => {
         event.preventDefault();
@@ -29,6 +35,7 @@ class Contact extends Component {
         noiDung += " - Phone: " + this.state.fPhone;
         noiDung += " - Message: " + this.state.fMess;
         noiDung += " - Ngay: " + this.state.fNgay;
+        noiDung += " - Anh: " + this.state.fAnh;
         return noiDung;
     }
     render() {
@@ -64,21 +71,25 @@ class Contact extends Component {
                                     <div className="control-group">
                                         <div className="form-group floating-label-form-group controls mb-0 pb-2">
                                             <label>Name</label>
-                                            <input onChange={(event) => this.isChange(event)} name="fName" type="text" id="name" className="form-control" placeholder="Name" required="required" aria-invalid="false" />
+                                            <input onChange={(event) => this.isChange(event)} name="fName" type="text" id="name"
+                                                className="form-control" placeholder="Name" required="required" aria-invalid="false" />
                                             <p className="help-block text-danger" />
                                         </div>
                                     </div>
                                     <div className="control-group">
                                         <div className="form-group floating-label-form-group controls mb-0 pb-2">
                                             <label>Email Address</label>
-                                            <input onChange={(event) => this.isChange(event)} name="fEmail" type="email" id="email" className="form-control" placeholder="Email Adress" required="required" aria-invalid="false" />
+                                            <input onChange={(event) => this.isChange(event)} name="fEmail" type="email" id="email"
+                                                className="form-control" placeholder="Email Adress" required="required"
+                                                aria-invalid="false" />
                                             <p className="help-block text-danger" />
                                         </div>
                                     </div>
                                     <div className="control-group" />
                                     <div className="form-group floating-label-form-group controls mb-0 pb-2">
                                         <label>Phone Number</label>
-                                        <input onChange={(event) => this.isChange(event)} name="fPhone" type="tel" id="phone" className="form-control" placeholder="Phone Number" required="" />
+                                        <input onChange={(event) => this.isChange(event)} name="fPhone" type="tel" id="phone"
+                                            className="form-control" placeholder="Phone Number" required="" />
                                         <p className="help-block text-danger" />
                                     </div>
                                     <div className="control-group">
@@ -99,6 +110,15 @@ class Contact extends Component {
                                                 <option value="thu7">Ngày Thứ 7</option>
                                                 <option value="chunhat">Ngày Chủ Nhật</option>
                                             </select>
+                                            <p className="help-block text-danger"></p>
+                                        </div>
+                                    </div>
+                                    <br />
+
+                                    <div className="control-group">
+                                        <div className="form-group floating-label-form-group controls mb-0 pb-2">
+                                            <label>Chọn ảnh</label>
+                                            <input onChange={(event) => this.isFileChange(event)} type="file" className="form-control-file" name="fAnh"></input>
                                             <p className="help-block text-danger"></p>
                                         </div>
                                     </div>
