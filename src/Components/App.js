@@ -1,21 +1,22 @@
 import './../App.css';
+import AddUser from './AddUser';
+import Header from './Header';
+import Search from './Search';
+import TableData from './TableData';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <div className="searchForm">
+        <div className="container">
+          <div className="row">
+            <Search />
+            <TableData />
+            <AddUser />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
