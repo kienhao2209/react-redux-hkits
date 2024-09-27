@@ -7,20 +7,20 @@ class TableData extends Component {
                 <table className="table table-bordered table-striped table-hover">
                     <thead>
                         <tr>
-                            <th>STT</th>
-                            <th>Tên</th>
-                            <th>Điện thoại</th>
-                            <th>Quyền</th>
-                            <th>Thao tác</th>
+                            <th className="text-center">STT</th>
+                            <th className="text-center">Tên</th>
+                            <th className="text-center">Điện thoại</th>
+                            <th className="text-center">Quyền</th>
+                            <th className="text-center">Thao tác</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td scope="row">1</td>
+                            <td className="text-center">1</td>
                             <td>Trần Đức Lương</td>
-                            <td>0842822927</td>
-                            <td>Moderator</td>
-                            <td>
+                            <td className="text-center">0842822927</td>
+                            <td className="text-center">Moderator</td>
+                            <td className="text-center">
                                 <div className="btn-group">
                                     <div className="btn btn-warning btn--edit">
                                         <i className="btn--edit-icon fa-solid fa-pen-to-square" />
@@ -34,11 +34,11 @@ class TableData extends Component {
                             </td>
                         </tr>
                         <tr>
-                            <td scope="row">2</td>
+                            <td className="text-center">2</td>
                             <td>Trần Đức Lương</td>
-                            <td>0842822927</td>
-                            <td>Moderator</td>
-                            <td>
+                            <td className="text-center">0842822927</td>
+                            <td className="text-center">Moderator</td>
+                            <td className="text-center">
                                 <div className="btn-group">
                                     <div className="btn btn-warning btn--edit">
                                         <i className="btn--edit-icon fa-solid fa-pen-to-square" />
@@ -52,11 +52,11 @@ class TableData extends Component {
                             </td>
                         </tr>
                         <tr>
-                            <td scope="row">3</td>
+                            <td className="text-center">3</td>
                             <td>Phan Văn Tài Em</td>
-                            <td>0842822927</td>
-                            <td>Moderator</td>
-                            <td>
+                            <td className="text-center">0842822927</td>
+                            <td className="text-center">Moderator</td>
+                            <td className="text-center">
                                 <div className="btn-group">
                                     <div className="btn btn-warning btn--edit">
                                         <i className="btn--edit-icon fa-solid fa-pen-to-square" />
@@ -70,11 +70,11 @@ class TableData extends Component {
                             </td>
                         </tr>
                         <tr>
-                            <td scope="row">4</td>
+                            <td className="text-center">4</td>
                             <td>Bùi Tiến Dũng</td>
-                            <td>0842822927</td>
-                            <td>Moderator</td>
-                            <td>
+                            <td className="text-center">0842822927</td>
+                            <td className="text-center">Moderator</td>
+                            <td className="text-center">
                                 <div className="btn-group">
                                     <div className="btn btn-warning btn--edit">
                                         <i className="btn--edit-icon fa-solid fa-pen-to-square" />
@@ -88,11 +88,11 @@ class TableData extends Component {
                             </td>
                         </tr>
                         <tr>
-                            <td scope="row">5</td>
+                            <td className="text-center">5</td>
                             <td>Trần Đức Lương</td>
-                            <td>0842822927</td>
-                            <td>Moderator</td>
-                            <td>
+                            <td className="text-center">0842822927</td>
+                            <td className="text-center">Moderator</td>
+                            <td className="text-center">
                                 <div className="btn-group">
                                     <div className="btn btn-warning btn--edit">
                                         <i className="btn--edit-icon fa-solid fa-pen-to-square" />

@@ -12,9 +12,6 @@ class Search extends Component {
                         <input
                             type="text"
                             className="form-control"
-                            name=""
-                            id=""
-                            aria-describedby="helpId"
                             placeholder="Nhập từ khoá"
                         />
                         <div className="btn btn-info">
@@ -22,7 +19,7 @@ class Search extends Component {
                         </div>
                     </div>
                 </div>
-                <hr/>
+                <hr />
             </div>
         );
     }

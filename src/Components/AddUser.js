@@ -11,9 +11,6 @@ class AddUser extends Component {
                             <input
                                 type="text"
                                 className="form-control"
-                                name=""
-                                id=""
-                                aria-describedby="helpId"
                                 placeholder="Tên user"
                             />
                         </div>
@@ -21,15 +18,12 @@ class AddUser extends Component {
                             <input
                                 type="text"
                                 className="form-control"
-                                name=""
-                                id=""
-                                aria-describedby="helpId"
                                 placeholder="Điện thoại"
                             />
                         </div>
                         <div className="form-group mb-3">
-                            <select className="form-select" aria-label="Default select example">
-                                <option selected="">Chọn quyền mặc định</option>
+                            <select className="form-select" required>
+                                <option>Chọn quyền mặc định</option>
                                 <option value={1}>Admin</option>
                                 <option value={2}>Moderator</option>
                                 <option value={3}>Normal</option>
