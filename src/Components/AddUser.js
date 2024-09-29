@@ -1,30 +1,9 @@
 import React, { Component } from 'react';
 
 class AddUser extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            trangThaiChinhSua: false
-        }
-    }
-
-    thayDoiTrangThai = () => {
-        this.setState({
-            trangThaiChinhSua: !this.state.trangThaiChinhSua
-        });
-    }
-
-    hienThiNut = () => {
-        if (this.state.trangThaiChinhSua === true) {
-            return <div className="btn d-block btn-outline-secondary mb-3" onClick={() => this.thayDoiTrangThai()}>Đóng lại</div>;
-        } else {
-            return <div className="btn d-block btn-outline-info mb-3" onClick={() => this.thayDoiTrangThai()}>Thêm mới</div>;
-        }
-    }
-
-    hienThiForm = () => {
-        if (this.state.trangThaiChinhSua === true) {
-            return (
+    render() {
+        return (
+            <div className="col-md-3">
                 <div className="card border-primary mb-3" style={{ maxWidth: "18rem" }}>
                     <div className="card-header">Thêm mới user vào hệ thống</div>
                     <div className="card-body text-primary">
@@ -55,15 +34,6 @@ class AddUser extends Component {
                         </div>
                     </div>
                 </div>
-            )
-        }
-    }
-
-    render() {
-        return (
-            <div className="col-md-3">
-                {this.hienThiNut()}
-                {this.hienThiForm()}
             </div>
         );
     }
