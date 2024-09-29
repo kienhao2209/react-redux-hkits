@@ -4,23 +4,27 @@ class AddUser extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            trangThaiChinhSua: true
+            trangThaiChinhSua: false
         }
+    }
+
+    thayDoiTrangThai = () => {
+        this.setState({
+            trangThaiChinhSua: !this.state.trangThaiChinhSua
+        });
     }
 
     hienThiNut = () => {
         if (this.state.trangThaiChinhSua === true) {
-            return <div className="btn d-block btn-outline-secondary mb-3">Đóng lại</div>;
+            return <div className="btn d-block btn-outline-secondary mb-3" onClick={() => this.thayDoiTrangThai()}>Đóng lại</div>;
         } else {
-            return <div className="btn d-block btn-outline-info mb-2">Thêm mới</div>;
+            return <div className="btn d-block btn-outline-info mb-3" onClick={() => this.thayDoiTrangThai()}>Thêm mới</div>;
         }
     }
 
-    render() {
-        return (
-            <div className="col-md-3">
-                {this.hienThiNut()}
-
+    hienThiForm = () => {
+        if (this.state.trangThaiChinhSua === true) {
+            return (
                 <div className="card border-primary mb-3" style={{ maxWidth: "18rem" }}>
                     <div className="card-header">Thêm mới user vào hệ thống</div>
                     <div className="card-body text-primary">
@@ -51,6 +55,15 @@ class AddUser extends Component {
                         </div>
                     </div>
                 </div>
+            )
+        }
+    }
+
+    render() {
+        return (
+            <div className="col-md-3">
+                {this.hienThiNut()}
+                {this.hienThiForm()}
             </div>
         );
     }
